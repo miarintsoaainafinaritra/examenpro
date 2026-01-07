@@ -17,7 +17,6 @@ FROM Dish d
 LEFT JOIN Ingredient i ON d.id = i.id_dish 
 WHERE d.id = 1;
 
-
 SELECT DISTINCT d.* 
 FROM Dish d 
 JOIN Ingredient i ON d.id = i.id_dish 
