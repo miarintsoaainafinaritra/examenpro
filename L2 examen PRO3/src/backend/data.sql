@@ -30,3 +30,12 @@ WHERE i.category = 'VEGETABLE';
 SELECT COUNT(*) 
 FROM Ingredient 
 WHERE name = 'Laitue';
+
+ALTER TABLE Ingredient 
+ADD COLUMN IF NOT EXISTS required_quantity DECIMAL(10,2) DEFAULT NULL;
+
+UPDATE Ingredient SET required_quantity = 1.00 WHERE nom = 'Laitue';
+UPDATE Ingredient SET required_quantity = 2.00 WHERE nom = 'Tomate';
+UPDATE Ingredient SET required_quantity = 0.50 WHERE nom = 'Poulet';
+UPDATE Ingredient SET required_quantity = NULL WHERE nom = 'Chocolat';
+UPDATE Ingredient SET required_quantity = NULL WHERE nom = 'Beurre';
